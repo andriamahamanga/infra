@@ -27,6 +27,5 @@ resource "google_cloudbuild_trigger" "build_trigger_terraform_feature" {
 
   }
 
-  service_account = test
 
 }
