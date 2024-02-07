@@ -1,16 +1,12 @@
 resource "google_cloudbuild_trigger" "react-trigger" {
   location = "us-central1"
+  name        = "triggera"
+  description = "Build trigger for terraform ci/cd  "
 
-  github {
-     name  = "nodehello" 
-     owner = "andriamahamanga" 
-
-     push {
-         branch       = var.branch_name
-    }
-}
-
-  filename      = "./cloudbuild.yaml"
+  trigger_template {
+    repo_name   = var.repository_name
+    branch_name = var.branch_name
+  }
   ignored_files = [".gitignore", "terraform/*"]
   # build {
   #   step {
