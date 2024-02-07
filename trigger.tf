@@ -6,7 +6,7 @@ resource "google_cloudbuild_trigger" "build_trigger_terraform_feature" {
 
   trigger_template {
     project_id  = vibrant-petal-406618
-    repo_name   = nodehello
+    repo_name   = infra
     branch_name = main
   }
   included_files = ["**"]
