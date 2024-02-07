@@ -4,17 +4,12 @@ resource "google_cloudbuild_trigger" "react-trigger" {
   description = "Build trigger for terraform ci/cd  "
 
   trigger_template {
-    repo_name   = var.repository_name
-    branch_name = var.branch_name
+    repo_name   = "github_andriamahamanga_nodehello"
+    branch_name = "master"
   }
+  filename = "cloudbuild.yaml"
   ignored_files = [".gitignore", "terraform/*"]
-  # build {
-  #   step {
-  #     name       = "node"
-  #     entrypoint = "npm"
-  #     args       = ["install"]
-  #   }
-  # }
+  included_files = ["**"]
 }
 
 
