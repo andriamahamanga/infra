@@ -9,6 +9,10 @@ variable "feature_branch_name" {
 }
 variable "repository_name" {
   description = "Name of the code source Repository for boutique"
-  default     = "github_andriamahamanga_infra"
+  default     = "github_andriamahamanga_nodehello"
 }
 
+variable "repository_infra_name" {
+  description = "Name of the code source Repository for boutique"
+  default     = "github_andriamahamanga_infra"
+}
