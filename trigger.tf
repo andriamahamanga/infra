@@ -5,7 +5,7 @@ resource "google_cloudbuild_trigger" "react-trigger" {
 
   trigger_template {
     repo_name   = "github_andriamahamanga_nodehello"
-    branch_name = "master"
+    branch_name = "main"
   }
   filename = "cloudbuild.yaml"
   ignored_files = [".gitignore", "terraform/*"]
