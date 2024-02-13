@@ -28,7 +28,7 @@ resource "google_cloudbuild_trigger" "build_trigger_terraform_feature" {
       id         = "tf init"
       name       = "hashicorp/terraform:1.1.9"
       entrypoint = "sh"
-      args       = ["-c", "terraform init "]
+      args       = ["-c", "terraform init -backend=true -backend-config=config-${var.env}/backend.tfvars"]
     }
 
     step {
@@ -54,7 +54,7 @@ resource "google_cloudbuild_trigger" "build_trigger_terraform" {
       id         = "tf init"
       name       = "hashicorp/terraform:1.1.9"
       entrypoint = "sh"
-      args       = ["-c", "terraform init "]
+      args       = ["-c", "terraform init -backend=true -backend-config=config-${var.env}/backend.tfvars "]
     }
 
     step {
