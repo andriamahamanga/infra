@@ -2,14 +2,19 @@
 resource "google_project_iam_member" "cloudbuild_sa_roles" {
   project = var.project_id
   for_each = toset([
-    "roles/cloudbuild.builds.builder",
-    "roles/cloudbuild.workerPoolUser",
-    "roles/source.reader",
-    "roles/iam.serviceAccountUser",
+    "roles/resourcemanager.projectIamAdmin",
     "roles/run.admin",
+    "roles/storage.admin",
+    "roles/secretmanager.secretAccessor",
+    "roles/cloudbuild.builds.builder",
     "roles/storage.objectAdmin",
-    "roles/secretmanager.secretAccessor"
-
+    "roles/logging.logWriter",
+    "roles/editor",
+    "roles/iam.roleAdmin",
+    "roles/iam.serviceAccountUser",
+    "roles/cloudsql.editor",
+    "roles/cloudbuild.workerPoolUser",
+    "roles/source.reader"
   ])
 
   member = "serviceAccount:418744326158@cloudbuild.gserviceaccount.com"
