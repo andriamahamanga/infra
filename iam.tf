@@ -66,7 +66,7 @@ resource "google_project_iam_member" "cloudrun-sa-agent" {
 
 
 // terraform
-resource "google_project_iam_member" "sa_terraform_build" {
+resource "google_project_iam_member" "our_sa_terraform_build" {
   project = var.project_id
   for_each = toset([
     "roles/resourcemanager.projectIamAdmin",
@@ -79,7 +79,9 @@ resource "google_project_iam_member" "sa_terraform_build" {
     "roles/editor",
     "roles/iam.roleAdmin",
     "roles/iam.serviceAccountUser",
-    "roles/cloudsql.editor"
+    "roles/cloudsql.editor",
+    "roles/cloudbuild.workerPoolUser",
+    "roles/source.reader"
   ])
 
   member = "serviceAccount:${google_service_account.our_sa_terraform_build.email}"
