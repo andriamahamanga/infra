@@ -40,16 +40,14 @@ resource "google_cloudbuild_trigger" "build_trigger_terraform_feature" {
   }
 
 }
-
-
-resource "google_cloudbuild_trigger" "build_trigger_terraform_feature" {
+resource "google_cloudbuild_trigger" "build_trigger_terraform" {
   location = "us-central1"
-  name        = "testbuild"
+  name        = "terraform-apply"
   description = "Build trigger for terraform ci/cd  "
 
   trigger_template {
     repo_name   = var.repository_infra_name
-    branch_name = var.branch_name
+    branch_name = var.feature_branch_name
   }
     build {
 

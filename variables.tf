@@ -16,3 +16,8 @@ variable "repository_infra_name" {
   description = "Name of the code source Repository for boutique"
   default     = "github_andriamahamanga_infra"
 }
+variable "env" {
+}
+variable "project_id" {
+
+}
