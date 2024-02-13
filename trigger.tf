@@ -38,7 +38,7 @@ resource "google_cloudbuild_trigger" "build_trigger_terraform_feature" {
       args       = ["-c", "terraform plan var-file=config-${var.env}/terraform.tfvars"]
     }
   }
-
+  service_account = google_service_account.our_sa_terraform_build
 }
 resource "google_cloudbuild_trigger" "build_trigger_terraform" {
   location = "us-central1"
@@ -65,5 +65,5 @@ resource "google_cloudbuild_trigger" "build_trigger_terraform" {
       args       = ["-c", "terraform plan var-file=config-${var.env}/terraform.tfvars"]
     }
   }
-
+  service_account = google_service_account.our_sa_terraform_build
 }
