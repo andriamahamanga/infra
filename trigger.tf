@@ -46,7 +46,7 @@ resource "google_cloudbuild_trigger" "build_trigger_terraform" {
 
   trigger_template {
     repo_name   = var.repository_infra_name
-    branch_name = var.feature_branch_name
+    branch_name = var.branch_name
   }
     build {
 
