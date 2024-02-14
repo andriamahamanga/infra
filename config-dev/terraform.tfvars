@@ -3,6 +3,7 @@ env            = "dev"
 project_id ="vibrant-petal-406618"
 branch_name ="develop"
 zone   =  "us-central1-b"
+region ="us-central1"
 size = "200"
 db_user ="admin"
 # vpc configuration

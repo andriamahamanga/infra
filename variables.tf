@@ -20,6 +20,8 @@ variable "vpc_network" {
 }
 variable "region" {
 }
+variable "zone" {
+}
 variable "project_id" {
 
 }
