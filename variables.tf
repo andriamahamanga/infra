@@ -25,3 +25,6 @@ variable "zone" {
 variable "project_id" {
 
 }
+variable "subnet_main_prefix" {
+  
+}
