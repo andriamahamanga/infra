@@ -63,5 +63,12 @@ resource "google_cloudbuild_trigger" "build_trigger_terraform" {
       entrypoint = "sh"
       args       = ["-c", "terraform plan -var-file=config-${var.env}/terraform.tfvars"]
     }
+    step {
+      id         = "tf plan"
+      name       = "hashicorp/terraform:1.1.9"
+      entrypoint = "sh"
+      args       = ["-c", "terraform apply -var-file=config-${var.env}/terraform.tfvars"]
+    }
+  
   }
 }
