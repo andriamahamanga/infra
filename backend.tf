@@ -1,18 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket  = "statefilepoc"
-    prefix  = "state"
-  }  
-  required_version = ">= 0.12.7"  
-  required_providers { 
-    google = {
-      source = "hashicorp/google"
-      version = "5.9.0"
-    }
+    # Empty backend declaration (partial configuration : https://www.terraform.io/docs/backends/config.html#partial-configuration).
+    # The properties will be provided during the initialization.
   }
-}
-provider "google" {
-  project = "vibrant-petal-406618"
-  region  = "us-central1"
-  zone    = "us-central1-a"
 }
