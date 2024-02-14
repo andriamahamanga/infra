@@ -16,6 +16,10 @@ variable "repository_infra_name" {
 }
 variable "env" {
 }
+variable "vpc_network" {
+}
+variable "region" {
+}
 variable "project_id" {
 
 }
