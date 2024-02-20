@@ -12,4 +12,5 @@ subnet_main_prefix = "10.70.58.0/24"
 
 sql_private_ip = "10.70.59.0"
 #mysql_private_ip="10.70.245.0"
-ip_cidr_range_vpc_connector_serverless = "10.70.51.0/28"
+# Geny.com
+mig_instance_count         = 1

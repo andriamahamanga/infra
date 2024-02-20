@@ -26,14 +26,14 @@ resource "google_cloudbuild_trigger" "build_trigger_terraform_feature" {
 
     step {
       id         = "tf init"
-      name       = "hashicorp/terraform:1.1.9"
+      name       = "hashicorp/terraform:1.7.3"
       entrypoint = "sh"
       args       = ["-c", "terraform init -backend=true -backend-config=config-${var.env}/backend.tfvars"]
     }
 
     step {
       id         = "tf plan"
-      name       = "hashicorp/terraform:1.1.9"
+      name       = "hashicorp/terraform:1.7.3"
       entrypoint = "sh"
       args       = ["-c", "terraform plan -var-file=config-${var.env}/terraform.tfvars"]
     }
